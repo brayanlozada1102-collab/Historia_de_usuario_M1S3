@@ -82,10 +82,10 @@ def main(inventorylist):
                 else:
                     # Merge: add quantities, update price
                     for new_product in new_inventory:
-                        old_product = search_product(inventorylist, new_product["nombre"])
+                        old_product = search_product(inventorylist, new_product["name"])
                         if old_product:
-                            old_product["cantidad"] += new_product["cantidad"]
-                            old_product["precio"] = new_product["precio"]
+                            old_product["quantity"] += new_product["quantity"]
+                            old_product["price"] = new_product["price"]
                         else:
                             inventorylist.append (new_product)
                     print("Merged inventory (quantities added together).")
